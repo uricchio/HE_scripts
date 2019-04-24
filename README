@@ -1,0 +1,14 @@
+Included in this repo are example scripts for the HE-regression-based selection inference from Hernandez et al 2017 (https://www.biorxiv.org/content/10.1101/219238v2).
+
+The idea behind these scripts is to:
+
+1. Assign simulated effect sizes to real genetic variants in the TGP under the model of Uricchio et al 2016 (Genome Research), and simulate phenotypes with low h^2. Run HE on the simualted phenotypes and real genotypes. This is handled by master.py.
+
+2. Pool genes together into groups of 10,000.  We sample from approximate beta distributions over the model parameters (phi, rho, tau)  by resampling from the set of genes simualted in 1. This is handled by make_summary_file.py..
+
+3. Perform least squares rejection sampling. This is handled by compute_lsq.py.
+
+4. Various scripts to assess these methods.
+
+These scripts are intended only to be illustrative of our approach -- they are set up to run on the UCSF cluster and not immediately usable as a software tool in another computing environment. I'm happy to respond to any queries about how to adapt them to another environment.
+
